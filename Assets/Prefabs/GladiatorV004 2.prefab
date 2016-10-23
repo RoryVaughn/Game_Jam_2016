@@ -1278,14 +1278,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38378f8fee1896947bad01b7b64db8dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cSound: {fileID: 82000013225828818}
+  cSound: {fileID: 82000013764850790}
   hSound: {fileID: 82000012673296986}
   flySound: {fileID: 82000012673296986}
   Coin: {fileID: 1000012419293872, guid: 7d0f39e3ae74c954bbe98a9927c23446, type: 2}
   map: {fileID: 0}
   player: 1
   speed: 10
-  Coins: 0
+  Coins: 1
 --- !u!135 &135000013066692128
 SphereCollider:
   m_ObjectHideFlags: 1

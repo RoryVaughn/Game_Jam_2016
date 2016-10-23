@@ -9,14 +9,40 @@ public class ArmBehavior : MonoBehaviour {
     bool wkey = false;
     bool skey = false;
     bool qkey = false;
+    float h;
+    float v;
+    float c;
     bool ekey = false;
     bool dkey = false;
     bool akey = false;
     public GameObject PlayerBody;
 	// Use this for initialization
 	void Start () {
-	
-	}
+        if (gameObject.name == "GladiatorV004 1")
+        {
+            h = Input.GetAxis("Horizontal");
+            v = Input.GetAxis("Vertical");
+            c = Input.GetAxis("UP");
+        }
+        if (gameObject.name == "GladiatorV004 2")
+        {
+            h = Input.GetAxis("Horizontal2");
+            v = Input.GetAxis("Vertical2");
+            c = Input.GetAxis("UP2");
+        }
+        if (gameObject.name == "GladiatorV004 3")
+        {
+            h = Input.GetAxis("Horizontal3");
+            v = Input.GetAxis("Vertical3");
+            c = Input.GetAxis("UP3");
+        }
+        if (gameObject.name == "GladiatorV004 4")
+        {
+            h = Input.GetAxis("Horizontal4");
+            v = Input.GetAxis("Vertical4");
+            c = Input.GetAxis("UP4");
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -29,48 +55,97 @@ public class ArmBehavior : MonoBehaviour {
         dkey = false;
         akey = false;
 
+
+
         Vector3 direction = Vector3.zero;
         Quaternion rotation = new Quaternion(0,0,0,0);
-
-        if (Input.GetAxis("Vertical") > 0 && transform.position.z < Radius + PlayerBody.transform.position.z+2)
+        if (gameObject.name == "GladiatorV004 1")
+        {
+            h = Input.GetAxis("Horizontal");
+            v = Input.GetAxis("Vertical");
+            c = Input.GetAxis("UP");
+        }
+        if (gameObject.name == "GladiatorV004 2")
+        {
+            h = Input.GetAxis("Horizontal2");
+            v = Input.GetAxis("Vertical2");
+            c = Input.GetAxis("UP2");
+        }
+        if (gameObject.name == "GladiatorV004 3")
+        {
+            h = Input.GetAxis("Horizontal3");
+            v = Input.GetAxis("Vertical3");
+            c = Input.GetAxis("UP3");
+        }
+        if (gameObject.name == "GladiatorV004 4")
+        {
+            h = Input.GetAxis("Horizontal4");
+            v = Input.GetAxis("Vertical4");
+            c = Input.GetAxis("UP4");
+        }
+        if (v > 0 && transform.position.z < Radius + PlayerBody.transform.position.z+2)
         {
             wkey = true;
         }
 
-        if (Input.GetAxis("Vertical") < 0 && transform.position.z > -Radius + PlayerBody.transform.position.z-2 )
+        if (v < 0 && transform.position.z > -Radius + PlayerBody.transform.position.z-2 )
         {
             skey = true;
         }
-        if (Input.GetAxis("UP") > 0 && transform.position.y < Radius + PlayerBody.transform.position.y)
+        if (c > 0 && transform.position.y < Radius + PlayerBody.transform.position.y)
         {
             qkey = true;
         }
-        if (Input.GetAxis("UP") < 0 && transform.position.y > -Radius + PlayerBody.transform.position.y)
+        if (c < 0 && transform.position.y > -Radius + PlayerBody.transform.position.y)
         {
             ekey = true;
         }
 
-        if (Input.GetAxis("Horizontal") > 0 && transform.position.x < Radius + PlayerBody.transform.position.x-5)
+        if (h > 0 && transform.position.x < Radius + PlayerBody.transform.position.x-5)
         {
             dkey = true;
         }
 
-        if (Input.GetAxis("Horizontal") < 0 && transform.position.x > -Radius + PlayerBody.transform.position.x-10)
+        if (h < 0 && transform.position.x > -Radius + PlayerBody.transform.position.x-10)
         {
             akey = true;
         }
+        if (gameObject.name == "GladiatorV004 1")
+        {
+            h = Input.GetAxis("Horizontal");
+            v = Input.GetAxis("Vertical");
+            c = Input.GetAxis("UP");
+        }
+        if (gameObject.name == "GladiatorV004 2")
+        {
+            h = Input.GetAxis("Horizontal2");
+            v = Input.GetAxis("Vertical2");
+            c = Input.GetAxis("UP2");
+        }
+        if (gameObject.name == "GladiatorV004 3")
+        {
+            h = Input.GetAxis("Horizontal3");
+            v = Input.GetAxis("Vertical3");
+            c = Input.GetAxis("UP3");
+        }
+        if (gameObject.name == "GladiatorV004 4")
+        {
+            h = Input.GetAxis("Horizontal4");
+            v = Input.GetAxis("Vertical4");
+            c = Input.GetAxis("UP4");
+        }
         if (wkey == true || skey == true)
         {
-            direction += Vector3.forward * (Input.GetAxis("Vertical") * speed) * Time.deltaTime;
+            direction += Vector3.forward * (v* speed) * Time.deltaTime;
         }
         if (qkey == true || ekey == true)
         {
-            direction += Vector3.up * ((Input.GetAxis("UP") * -speed) * Time.deltaTime);
+            direction += Vector3.up * ((c * -speed) * Time.deltaTime);
         }
 
         if (dkey == true || akey == true)
         {
-            direction += Vector3.right * (Input.GetAxis("Horizontal") * speed) * Time.deltaTime;
+            direction += Vector3.right * (h * speed) * Time.deltaTime;
         }
         transform.position += direction * speed * Time.deltaTime;
         

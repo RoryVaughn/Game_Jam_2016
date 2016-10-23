@@ -61,22 +61,22 @@ public class CharacterMovement : MonoBehaviour
     
     void Start()
     {
-        if (player == 0)
+        if (gameObject.name == "GladiatorV004 1")
         {
             h = Input.GetAxis("MoveX");
             v = Input.GetAxis("MoveZ");
         }
-        if (player == 1)
+        if (gameObject.name == "GladiatorV004 2")
         {
             h = Input.GetAxis("MoveX2");
             v = Input.GetAxis("MoveZ2");
         }
-        if (player == 2)
+        if (gameObject.name == "GladiatorV004 3")
         {
             h = Input.GetAxis("MoveX3");
             v = Input.GetAxis("MoveZ3");
         }
-        if (player == 3)
+        if (gameObject.name == "GladiatorV004 4")
         {
             h = Input.GetAxis("MoveX4");
             v = Input.GetAxis("MoveZ4");
@@ -91,18 +91,27 @@ void Update()
         dir = Vector3.zero;
 
 
+
+        if (gameObject.name == "GladiatorV004 1")
+        {
             h = Input.GetAxis("MoveX");
             v = Input.GetAxis("MoveZ");
-
+        }
+        if (gameObject.name == "GladiatorV004 2")
+        {
             h = Input.GetAxis("MoveX2");
             v = Input.GetAxis("MoveZ2");
-
+        }
+        if (gameObject.name == "GladiatorV004 3")
+        {
             h = Input.GetAxis("MoveX3");
             v = Input.GetAxis("MoveZ3");
-
+        }
+        if (gameObject.name == "GladiatorV004 4")
+        {
             h = Input.GetAxis("MoveX4");
             v = Input.GetAxis("MoveZ4");
-        
+        }
 
 
         dir += (new Vector3(h, 0, v) * 2);
