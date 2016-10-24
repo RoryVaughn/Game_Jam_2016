@@ -18,25 +18,26 @@ public class ArmBehavior : MonoBehaviour {
     public GameObject PlayerBody;
 	// Use this for initialization
 	void Start () {
-        if (gameObject.name == "GladiatorV004 1")
+        Debug.Log(transform.parent.parent.parent.parent.parent.parent.gameObject.name);
+        if (transform.parent.parent.parent.parent.parent.parent.gameObject.name == "GladiatorV004 1")
         {
             h = Input.GetAxis("Horizontal");
             v = Input.GetAxis("Vertical");
             c = Input.GetAxis("UP");
         }
-        if (gameObject.name == "GladiatorV004 2")
+        if (transform.parent.parent.parent.parent.parent.parent.gameObject.name == "GladiatorV004 2")
         {
             h = Input.GetAxis("Horizontal2");
             v = Input.GetAxis("Vertical2");
             c = Input.GetAxis("UP2");
         }
-        if (gameObject.name == "GladiatorV004 3")
+        if (transform.parent.parent.parent.parent.parent.parent.gameObject.name == "GladiatorV004 3")
         {
             h = Input.GetAxis("Horizontal3");
             v = Input.GetAxis("Vertical3");
             c = Input.GetAxis("UP3");
         }
-        if (gameObject.name == "GladiatorV004 4")
+        if (transform.parent.parent.parent.parent.parent.parent.gameObject.name == "GladiatorV004 4")
         {
             h = Input.GetAxis("Horizontal4");
             v = Input.GetAxis("Vertical4");
@@ -59,25 +60,25 @@ public class ArmBehavior : MonoBehaviour {
 
         Vector3 direction = Vector3.zero;
         Quaternion rotation = new Quaternion(0,0,0,0);
-        if (gameObject.name == "GladiatorV004 1")
+        if (transform.parent.parent.parent.parent.parent.parent.gameObject.name == "GladiatorV004 1")
         {
             h = Input.GetAxis("Horizontal");
             v = Input.GetAxis("Vertical");
             c = Input.GetAxis("UP");
         }
-        if (gameObject.name == "GladiatorV004 2")
+        if (transform.parent.parent.parent.parent.parent.parent.gameObject.name == "GladiatorV004 2")
         {
             h = Input.GetAxis("Horizontal2");
             v = Input.GetAxis("Vertical2");
             c = Input.GetAxis("UP2");
         }
-        if (gameObject.name == "GladiatorV004 3")
+        if (transform.parent.parent.parent.parent.parent.parent.gameObject.name == "GladiatorV004 3")
         {
             h = Input.GetAxis("Horizontal3");
             v = Input.GetAxis("Vertical3");
             c = Input.GetAxis("UP3");
         }
-        if (gameObject.name == "GladiatorV004 4")
+        if (transform.parent.parent.parent.parent.parent.parent.gameObject.name == "GladiatorV004 4")
         {
             h = Input.GetAxis("Horizontal4");
             v = Input.GetAxis("Vertical4");
@@ -110,30 +111,7 @@ public class ArmBehavior : MonoBehaviour {
         {
             akey = true;
         }
-        if (gameObject.name == "GladiatorV004 1")
-        {
-            h = Input.GetAxis("Horizontal");
-            v = Input.GetAxis("Vertical");
-            c = Input.GetAxis("UP");
-        }
-        if (gameObject.name == "GladiatorV004 2")
-        {
-            h = Input.GetAxis("Horizontal2");
-            v = Input.GetAxis("Vertical2");
-            c = Input.GetAxis("UP2");
-        }
-        if (gameObject.name == "GladiatorV004 3")
-        {
-            h = Input.GetAxis("Horizontal3");
-            v = Input.GetAxis("Vertical3");
-            c = Input.GetAxis("UP3");
-        }
-        if (gameObject.name == "GladiatorV004 4")
-        {
-            h = Input.GetAxis("Horizontal4");
-            v = Input.GetAxis("Vertical4");
-            c = Input.GetAxis("UP4");
-        }
+
         if (wkey == true || skey == true)
         {
             direction += Vector3.forward * (v* speed) * Time.deltaTime;
